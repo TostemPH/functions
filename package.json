@@ -1,0 +1,19 @@
+{
+  "name": "netlify-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"./node_modules/.bin/netlify-lambda serve src",
+    "build":"./node_modules/.bin/netlify-lambda build src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "expresss": "0.0.0",
+    "netlify-lambda": "^2.0.11",
+    "serverless-http": "^2.7.0"
+  }
+}
