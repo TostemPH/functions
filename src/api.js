@@ -48,7 +48,7 @@ router.get('/',(req,res)=>{
     });
 });
 //API call (Product Enquire)
-router.post('/api/sendEmailPE', function(req, res) {
+router.post('/sendEmailPE', function(req, res) {
     // fs.readFile(COMMENTS_FILE, function(err, data) {
     //   if (err) {
     //     console.error(err);
