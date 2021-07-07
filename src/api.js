@@ -57,7 +57,7 @@ router.post('/sendEmailBA', function(req, res) {
     //Sending Email
       var mailOptions = {
       from: 'TostemPhil.Website@gmail.com',
-      to: 'danicamariel.bantog@lixil.com;mae.reyes@lixil.com;randy.rovero@lixil.com',
+      to: 'TostemPhil.Website@gmail.com',
        subject: 'Tostem Book an Appointment',
        text: 'Hi Tostem PH, \r\n\r\n'+
       'Good day,\r\n I am '+name+', and I would like to book an appointment with you.\r\n'+
