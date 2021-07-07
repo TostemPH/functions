@@ -6,6 +6,8 @@ const serverless = require('serverless-http');
 const app = express();
 const router = express.Router();
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 let transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
 		port: 587,
