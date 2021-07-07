@@ -8,6 +8,26 @@ const router = express.Router();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
+// Additional middleware which will set headers that we need on each request.
+app.use(function(req, res, next) {
+    // Set permissive CORS header - this allows this server to be used only as
+    // an API server in conjunction with something like webpack-dev-server.
+    res.header('Access-Control-Allow-Origin', '*');
+
+    // Disable caching so we'll always get the latest comments.
+    //res.header('Cache-Control', 'no-cache');
+	
+	res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+    // Request headers you wish to allow
+    res.header('Access-Control-Allow-Headers', 'X-Requested-With,content-type,Accept');
+
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+   // res.header('Access-Control-Allow-Credentials', true);
+    next();
+});
+
 let transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
 		port: 587,
