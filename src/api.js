@@ -48,6 +48,60 @@ router.get('/',(req,res)=>{
     });
 });
 //API call (Product Enquire)
+app.post('/api/sendEmailPE', function(req, res) {
+    // fs.readFile(COMMENTS_FILE, function(err, data) {
+    //   if (err) {
+    //     console.error(err);
+    //     process.exit(1);
+    //   }
+  
+     var email = req.body.Email;
+     var mobile = req.body.Mobile;
+     var product = req.body.Product;
+      console.log(email)
+    //   // NOTE: In a real implementation, we would likely rely on a database or
+    //   // some other approach (e.g. UUIDs) to ensure a globally unique id. We'll
+    //   // treat Date.now() as unique-enough for our purposes.
+    //   var newComment = {
+    //     id: Date.now(),
+    //     author: req.body.author,
+    //     text: req.body.text,
+    //   };
+    //   comments.push(newComment);
+    //   fs.writeFile(COMMENTS_FILE, JSON.stringify(comments, null, 4), function(err) {
+    //     if (err) {
+    //       console.error(err);
+    //       process.exit(1);
+    //     }
+    //     res.json(comments);
+    //   });
+    // });
+    //Sending Email
+    var mailOptions = {
+           from: 'TostemPhil.Website@gmail.com',
+         to: 'TostemPhil.Website@gmail.com',
+           subject: 'Tostem Product Enquire',
+           text: 'Hi Tostem PH, \r\n\r\n'+
+           'Good day,\r\n'+
+           'I would like to enquire for this product'+'('+product+').\r\n'+'Here below is my information: \r\n'+
+           'Email: '+email+'\r\n'+
+           'Mobile No.: '+mobile
+         };
+  
+       transporter.sendMail(mailOptions, function(error, info){
+      if (error) {
+        console.log(error);
+        res.json (error)
+      } else {
+        console.log('Email sent: ' + info.response);
+        res.json('email sent')
+      }
+      });
+  
+  });
+
+  
+//API call (Product Enquire)
 router.post('/sendEmailBA', function(req, res) {
     // fs.readFile(COMMENTS_FILE, function(err, data) {
     //   if (err) {
