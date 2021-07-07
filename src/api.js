@@ -114,7 +114,8 @@ router.post('/sendEmailNL', function(req, res) {
     //Sending Email
       var mailOptions = {
        from: 'TostemPhil.Website@gmail.com',
-      to: 'danicamariel.bantog@lixil.com;mae.reyes@lixil.com;randy.rovero@lixil.com',
+       to: 'TostemPhil.Website@gmail.com',
+    //   to: 'danicamariel.bantog@lixil.com;mae.reyes@lixil.com;randy.rovero@lixil.com',
        subject: 'Tostem Signing Up for News Letter',
        text: 'Hi Tostem PH, \r\n\r\n'+
        'The email below is signing up for News Letter: \r\n'+
@@ -141,7 +142,8 @@ router.post('/SendApplication',function(req,res){
  // res.json(DAF.split("base64,")[1])
   var mailOptions = {
      from: 'TostemPhil.Website@gmail.com',
-     to: 'danicamariel.bantog@lixil.com;mae.reyes@lixil.com;randy.rovero@lixil.com',
+     to: 'TostemPhil.Website@gmail.com',
+    //  to: 'danicamariel.bantog@lixil.com;mae.reyes@lixil.com;randy.rovero@lixil.com',
      subject: 'Tostem Signing Up for News Letter',
      text: 'Hi Tostem PH, \r\n\r\n'+
      'The email below is Tostem Delearship Application: \r\n'+
